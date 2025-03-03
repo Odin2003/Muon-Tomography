@@ -56,7 +56,7 @@ Move a macro file from `sim/scripts' to the build area. C0 corresponds to a dete
 
 ![Image](https://github.com/user-attachments/assets/0442c105-2bed-488e-9482-267b1133ecee)
 
-Then run the code using 
+Then run the code using (in the build directory)
 
 ``` 
 ./exampleB4a  -b batch_run_C0RAA_01.mac -numberOfEvents 1000 -runNumber 987 -runSeq 99
@@ -81,3 +81,38 @@ source submit_all.sh
 to submit the jobs. Submission, error and output files are kept in the log directory that will be created when running jobSubmission.py.
 
 Output of root files for analysis is in the build directory. 
+
+
+## Visualization
+
+If you want to visualize the simulation, this will have to be done locally. Set up Geant4 with QT, OpenGL and GDML. In the cmake step of Geant4 configuring use
+
+```
+cmake -DCMAKE_INSTALL_PREFIX=../geant4-install \
+      -DGEANT4_INSTALL_DATA=ON \
+      -DGEANT4_USE_QT=ON \
+      -DGEANT4_USE_GDML=ON \
+      -DGEANT4_USE_OPENGL_X11=ON \
+      -DGEANT4_USE_RAYTRACER=ON \
+      -DQt5_DIR=$(brew --prefix qt5)/lib/cmake/Qt5 \
+      ..
+```
+
+Then 
+```
+make
+```
+
+Now you can run in the same way as before, locally, using 
+
+```
+./exampleB4a -i batch_run_C0RAA_01.mac
+```
+
+This will launch a QT window where you can run one event or multiple muons using 
+
+```
+/run/beamOn 100
+```
+
+
