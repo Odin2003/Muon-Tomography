@@ -50,7 +50,18 @@ cmake ..
 make -j 4
 ```
 
-### Running the code
+### Running the code:
+
 Move a macro file from `sim/scripts' to the build area. C0 corresponds to a detector position on the surface just outside of the cairn. C3 is buried 10m underground. RAA means the cairn is made of Rock2, the chamber of air and the passage (currently not implemented) also of air. RRR means all are made of Rock2 for the comparison runs. Here is the positioning:
 
 ![Image](https://github.com/user-attachments/assets/0442c105-2bed-488e-9482-267b1133ecee)
+
+Then run the code using 
+
+``` ./exampleB4a  -b batch_run_C0RAA_01.mac -numberOfEvents 1000 -runNumber 987 -runSeq 99```
+
+Edit the number of events and other parameters as needed. The macro file can be used to change parameters such as at what angles muons are generated, materials of the chamber/hill, camera positioning and so on. This works well to debug with low number of events (<50 000). To run many events, see job submission.
+
+
+### Job submission:
+
