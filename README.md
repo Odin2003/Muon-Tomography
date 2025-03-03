@@ -58,7 +58,9 @@ Move a macro file from `sim/scripts' to the build area. C0 corresponds to a dete
 
 Then run the code using 
 
-``` ./exampleB4a  -b batch_run_C0RAA_01.mac -numberOfEvents 1000 -runNumber 987 -runSeq 99```
+``` 
+./exampleB4a  -b batch_run_C0RAA_01.mac -numberOfEvents 1000 -runNumber 987 -runSeq 99
+```
 
 Edit the number of events and other parameters as needed. The macro file can be used to change parameters such as at what angles muons are generated, materials of the chamber/hill, camera positioning and so on. This works well to debug with low number of events (<50 000). To run many events, see job submission.
 
