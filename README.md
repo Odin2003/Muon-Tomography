@@ -51,3 +51,5 @@ make -j 4
 ```
 
 ### Running the code
+Move a macro file from `sim/scripts' to the build area. C0 corresponds to a detector position on the surface just outside of the cairn.mac 
+
