@@ -72,7 +72,7 @@ To submit large amounts of events, use jobSumission.py in the "jobs" directory. 
 python jobSubmission.py
 ```
 
-and 
+(Make sure to change directory locations in jobSubmission.py to your build directory) and 
 
 ```
 source submit_all.sh
