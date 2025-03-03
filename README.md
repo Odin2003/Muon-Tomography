@@ -66,4 +66,16 @@ Edit the number of events and other parameters as needed. The macro file can be 
 
 
 ### Job submission:
+To submit large amounts of events, use jobSumission.py in the "jobs" directory. Change the run_cmd for different macro files. Total number of events is njobs*nevents_per_job. When the file has been edited to your preferences, run
 
+```
+python jobSubmission.py
+```
+
+and 
+
+```
+source submit_all.sh
+```
+
+to submit the jobs. Submission, error and output files are kept in the log directory that will be created when running jobSubmission.py.
