@@ -53,4 +53,4 @@ make -j 4
 ### Running the code
 Move a macro file from `sim/scripts' to the build area. C0 corresponds to a detector position on the surface just outside of the cairn. C3 is buried 10m underground. RAA means the cairn is made of Rock2, the chamber of air and the passage (currently not implemented) also of air. RRR means all are made of Rock2 for the comparison runs. Here is the positioning:
 
-![Alt text](relative%20Muon-Tomography/images/Topographic_Map.jpg?raw=true "Topographic_Map")
+![Image](https://github.com/user-attachments/assets/0442c105-2bed-488e-9482-267b1133ecee)
