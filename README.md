@@ -1,7 +1,7 @@
 # Muon-Tomography
 Code to run muon tomography Geant4 simulations on the HPCC.
 
-## Environment:
+## Environment
 
 Follow same setup for DREAM simulation:
 
@@ -26,7 +26,28 @@ docker run -it --rm -h dreamsim -v /path/to/DREAMSIM:/DREAMSIM yongbinfeng/alma9
 ```
 **Note** if you have conda installed, exit the conda environment before running the singularity container, otherwise it might cause conflicts with different ROOT versions etc.
 
-## Directory organization:
+## Running the Simulation
 
-"sim" directory: 
--> "build" 
+### Structure of software:
+
+- `sim/exampleB4a.cc`: main program
+- `sim/src/B4DetectorConstruction.cc`:setup of the cairn, hill, and camera
+- `sim/include/TessellatedVertices.hh`: Definition of vertices for cairn and hill
+- `sim/include/TessellatedGeometry.hh`: Arranging vertices to form cairn and hill
+- `sim/src/TessellatedGeometry.cc`: Used in B4DetectorConstruction.cc to implement cairn and hill
+- `sim/src/B4aSteppingAction.cc`:access hits at each step
+- `sim/src/MuonTree.cc`:analysis and hit handling
+
+### Compiling:
+
+Inside the singularity environment, build program in "build" area,
+```
+cd /path/to/sim/directory
+cd sim
+mkdir build
+cd build
+cmake ..
+make -j 4
+```
+
+### Running the code
