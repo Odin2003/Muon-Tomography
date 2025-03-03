@@ -79,3 +79,5 @@ source submit_all.sh
 ```
 
 to submit the jobs. Submission, error and output files are kept in the log directory that will be created when running jobSubmission.py.
+
+Output of root files for analysis is in the build directory. 
