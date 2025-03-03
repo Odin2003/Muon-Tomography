@@ -1,0 +1,93 @@
+
+#$$$ jobName    ICv2    
+#$$$ runNumber  01      
+#$$$ runSeq     00       
+#$$$ runConfig    C0RAA    (string camera number and (rock,air, air) in (cairn, chamber, passage)
+#$$$ numberOfEvents   1000 
+
+#  #$$$ rootFile  muonTree01_test3.root  (file_name)
+#$$$ rootPre       mc      (file name will be Pre+runName+runNumber+runSeq+runConfig+NoE.root) 
+#$$$ createNtuple  true    (true or false))
+#$$$ miniNtuple    ture    (true of false, true to drop some objects to minimize Ntuple.)
+
+#  #$$$ MuonListFile     muonList_test3.txt     (file_name: actual file name: muonList.txt))
+#$$$ MuonListPre   muon    (file name will be Pre+runName+runNumber+runSeq+runConfig+NoE.list)
+#$$$ createMuonList   false                  (true or false)
+
+#$$$ monitorEvents    1000    (number of monitor events including non-triggered evetns)
+
+#$$$ cryPcut  2000.0      (MeV)
+#$$$ cryX     -35.00      (m) 
+#$$$ cryY       0.00      (m)
+#$$$ cryZ      -0.5       (m)
+#$$$ cryDZ      0.5       (m, half z range to spread CRY source position)
+#$$$ cryWorldZ  11.0      (m, hight of starting point of muons)
+#$$$ cryWorldR  50.0      (m, radius of starting point of muons)
+
+#$$$ trackStopZ  -6.0   (m, stop particl-trackin at this Z))  
+#$$$ trackMuonOnly   true    (false or true)
+
+#$$$ cryElevationAngleMin  0.0   (degree)
+#$$$ cryElevationAngleMax  32.0
+
+#$$$ cryAzimuthalAngleMin  -41.0 (degree)
+#$$$ cryAzimuthalAngleMax  41.0
+
+#$$$ camera1Xpos        -35.0 (m, camera1 is on the surface of the slope)
+#$$$ camera1Zpos          0.5 (m, from surface)
+#$$$ cameraWidth          2.0  (m, full width of camera)
+
+#$$$ cairnRotZ            0.0   (rotate Cairn around Z-axis in degree)
+
+#$$$ chamberSizeX         3.0  (m, full width)
+#$$$ chamberSizeY         3.0  (m, full width)
+#$$$ chamberSizeZ         3.0  (m, full width)
+#$$$ chamberPosX          0.0  (m)
+#$$$ chamberPosY          0.0  (m)
+#$$$ chamberPosZ          4.5  (m, chamberSizeZ/2)
+
+#$$$ passageSizeX         1.0  (m, full width, along nominal beam axis)
+#$$$ passageSizeY        10.0  (m, full width, horizontal)
+#$$$ passageSizeZ         2.0  (m, full widht, vertical)
+#$$$ passagePosX          0.0  (m)
+#$$$ passagePosY          6.5  (m, chamberSizeY/2+passageSizeY/2)
+#$$$ passagePosZ          4.0  (m, passageSizeZ/2)
+
+#$$$ materialCairn      Rock2    (Rock2  or G4_AIR) 
+#$$$ materialChamber    G4_AIR   (G4_AIR or Rock2)
+#$$$ materialPassage    G4_AIR   (G4_AIR or Rock2)
+#$$$ materialHill       Rock1
+
+#$$$ useParticleGun  false   (false or true)
+#$$$ pgunP     20.0          (GeV)
+#$$$ pgunParticle   mu+      (mu+ mu-)
+#$$$ pgunX     -30.0         (m)
+#$$$ pgunY      0.0          (m)
+#$$$ pgunZ     -6.0          (m)  (camera0: 0.5, camera1: -6)
+#$$$ pgunXdir  -1.0          (dimension less)
+#$$$ pgunYdir   0.01         (dimension less)
+#$$$ pgunZdir   0.01         (dimension less)
+
+
+/CRY/input returnMuons 1
+/CRY/input returnNeutrons 0
+/CRY/input returnProtons 0
+/CRY/input returnGammas 0
+/CRY/input returnPions 0
+/CRY/input returnKaons 0
+/CRY/input date 9-02-2016
+/CRY/input latitude 33.6
+/CRY/input altitude 0
+/CRY/input subboxLength 10  # 1 3 10 30 100 300
+/CRY/update  
+
+# Initialize kernel
+/run/initialize
+/run/printProgress 5000    # print every N events.
+/event/verbose 0
+/run/verbose 0
+/tracking/verbose 0
+#   /run/beamOn 10000   (Now this is done in the main program.) 
+# comment out "exit" in the next line, to keep the display window.
+# exit
+

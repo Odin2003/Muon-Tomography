@@ -1,0 +1,64 @@
+
+#$$$ runConfig    C0RAA  (string C0AAA- air,airair in cairn, chamber, passage)
+#$$$ runNumber    1      (Int 1 2 3 etc)
+
+#$$$ rootFile  muonTree01_cairnair.root  (file_name)
+#$$$ createNtuple true    (true or false))
+
+#$$$ MuonListFile     muonList_cairnair     (file_name: actual file name: muonList.txt))
+#$$$ createMuonList   true             (true or false)
+
+#$$$ monitorEvents    1000    (number of monitor events including non-triggered evetns)
+
+#$$$ cryPcut    100      (MeV)
+#$$$ cryX    -31.00      (m) 
+#$$$ cryY      0.00      (m)
+#$$$ cryZ     -2.5       (m)
+#$$$ cryDZ     3.00      (m, half z range)
+
+#$$$ cryElevationAngleMin  0.0   (degree)
+#$$$ cryElevationAngleMax   20
+
+#$$$ cryAzimuthalAngleMin  -20.0 (degree)
+#$$$ cryAzimuthalAngleMax  20.0
+
+#$$$ materialCairn      G4_AIR    (Rock2  or G4_AIR) 
+#$$$ materialChamber    G4_AIR   (G4_AIR or Rock2)
+#$$$ materialPassage    G4_AIR   (G4_AIR or Rock2)
+#$$$ materialHill       Rock1
+
+#$$$ useParticleGun  false   (false or true)
+#$$$ pgunP     20.0          (GeV)
+#$$$ pgunParticle   mu+      (mu+ mu-)
+#$$$ pgunX     -30.0         (m)
+#$$$ pgunY      0.0          (m)
+#$$$ pgunZ     -6.0          (m)  (camera0: 0.5, camera1: -6)
+#$$$ pgunXdir  -1.0          (dimension less)
+#$$$ pgunYdir   0.01         (dimension less)
+#$$$ pgunZdir   0.01         (dimension less)
+
+#$$$ trackMuonOnly   true    (false or true)
+
+/CRY/input returnMuons 1
+/CRY/input returnNeutrons 0
+/CRY/input returnProtons 0
+/CRY/input returnGammas 0
+/CRY/input returnPions 0
+/CRY/input returnKaons 0
+/CRY/input date 9-02-2016
+/CRY/input latitude 33.6
+/CRY/input altitude 0
+/CRY/input subboxLength 10  # 1 3 10 30 100 300
+/CRY/update  
+
+# Initialize kernel
+/random/setSeeds 123456 9873
+/run/initialize
+/run/printProgress 100    # print every N events.
+/event/verbose 0
+/run/verbose 0
+/tracking/verbose 0
+/run/beamOn 50000 #5355709 #= 85.7 million divided by 16 #4106489 = 65.7 million divided by 16 #12743360 = one day of data taking
+# comment out "exit" in the next line, to keep the display window.
+# exit
+
