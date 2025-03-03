@@ -123,3 +123,7 @@ Here is a muon getting "stuck" in the cairn:
 
 ![image](https://github.com/user-attachments/assets/1a316f86-49ca-47e3-931e-d60e3dd14da2)
 
+
+## Analysis
+
+For an analysis code, see os_analysis.ipynb. This plots basic histograms and the ratio of air to rock runs.
