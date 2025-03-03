@@ -115,4 +115,11 @@ This will launch a QT window where you can run one event or multiple muons using
 /run/beamOn 100
 ```
 
+Visualized in Geant4, the geometry looks like
+
+<img width="896" alt="image" src="https://github.com/user-attachments/assets/ca1b8884-3566-4aa6-8e87-99e540688110" />
+
+Here is a muon getting "stuck" in the cairn:
+
+![image](https://github.com/user-attachments/assets/1a316f86-49ca-47e3-931e-d60e3dd14da2)
 
