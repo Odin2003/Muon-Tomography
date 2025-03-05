@@ -103,7 +103,7 @@ Then
 make
 ```
 
-Now you can run in the same way as before, locally, using 
+Now you can run in the same way as before, locally, creating again a build directory within sim and compiling the code with cmake .. and make. Then you can run it using 
 
 ```
 ./exampleB4a -i batch_run_C0RAA_01.mac
